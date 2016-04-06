@@ -6,6 +6,6 @@
 			<li>使用jquery如何更改图片路径</li>
 			<li>在tableView中插入一个cell</li>
 		</ul>
-		<div class="clearfix"><button type="primary" small class="left">吃了</button><button type="black" small class="right">没吃</button>
+		<div class="clearfix"><button class="float-left btn">吃了</button><button class="btn float-right">没吃</button>
 	</div>
 </div>

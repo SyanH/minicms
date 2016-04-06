@@ -9,12 +9,11 @@
 	<meta http-equiv="Pragma" content="no-cache">
 	<meta http-equiv="Cache-control" content="no-cache">
 	<meta http-equiv="Cache" content="no-cache">
-	<link rel="stylesheet" type="text/css" href="<?php echo $this->assets('module.admin@assets/css/normalize.css'); ?>">
-	<link rel="stylesheet" type="text/css" href="<?php echo $this->assets('module.admin@assets/css/milligram.css'); ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo $this->assets('module.admin@assets/css/normalize.css'); ?>">
+	<link rel="stylesheet" type="text/css" href="<?php echo $this->assets('module.admin@assets/css/base.css'); ?>">    
 	<link rel="stylesheet" type="text/css" href="<?php echo $this->assets('module.admin@assets/css/style.css'); ?>">
 	<link rel="stylesheet" type="text/css" href="<?php echo $this->assets('module.admin@assets/css/font-awesome.min.css'); ?>">
 	<link rel="stylesheet" type="text/css" href="<?php echo $this->assets('module.admin@assets/css/perfect-scrollbar.min.css'); ?>">
-	<link rel="stylesheet" type="text/css" href="<?php echo $this->assets('module.admin@assets/css/jquery.modal.css'); ?>">
 </head>
 <body>
 	<div class="sidebar">
@@ -54,14 +53,14 @@
 		</nav>
 	</div>
 	<div class="main">
-		<div class="main-header">
+		<div class="main-header grid">
 			<div class="row">
-				<div class="column">
+				<div class="col">
 					<a href="#"><i class="fa fa-comments"></i>评论 <span class="badge badge-black">6</span></a>
 					<a href="#"><i class="fa fa-bar-chart"></i>内容 <span class="badge badge-green">4</span></a>
 					<a href="#"><i class="fa fa-weibo"></i>消息 <span class="badge badge-yellow">6</span></a>
 				</div>
-				<div class="column text-right">
+				<div class="col text-right">
 					<img class="user-img" src="<?php echo $this->pathUrl('module.admin@assets/images/user.jpg'); ?>">
 					<a href="#"><i class="fa fa-sign-out"></i>退出</a>
 				</div>
