@@ -2,8 +2,9 @@
 <html>
 <head>
 	<title>Login</title>
-	<link rel="stylesheet" type="text/css" href="<?php echo $this->pathUrl('module.admin@assets/css/base.css'); ?>">
-	<link rel="stylesheet" type="text/css" href="<?php echo $this->pathUrl('module.admin@assets/css/font-awesome.min.css'); ?>">
+	<link rel="stylesheet" type="text/css" href="<?php echo $this->assets('module.admin@assets/css/base.css'); ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo $this->assets('module.admin@assets/css/style.css'); ?>">
+	<link rel="stylesheet" type="text/css" href="<?php echo $this->assets('module.admin@assets/css/font-awesome.min.css'); ?>">
 	<style type="text/css">
 		body{
 			background-color: #fdfdfd;
@@ -17,6 +18,8 @@
 		}
 		.name-error,.pass-error{
 			display: none;
+            color:red;
+            font-size:13px;
 		}
 		.login-icon{
 			margin-right: 5px;
@@ -25,12 +28,13 @@
 		.login-error{
 			display: none;
 		}
+        
 	</style>
 </head>
 <body>
-	<row centered>
-		<column cols="3">
-			<div class="login-wrap">
+	<div class="grid">
+		<div class="row row-center">
+			<div class="login-wrap col-4">
 				<div class="forms">
 				    <fieldset>
 				        <legend><h4>登陆后台</h4></legend>
@@ -38,23 +42,23 @@
 				        <section>
 				            <label>账号 <span class="error name-error">账号不能为空</span></label>
 				            <input type="text" id="name" class="width-12"/>
-				        </section>
+				        </section><br />
 				        <section>
 				            <label>密码 <span class="error pass-error">密码不能为空</span></label>
 				            <input type="password" id="password" class="width-12" />
-				        </section>
+				        </section><br />
 				        <section>
-				        	<div class="group">
-					        	<label class="checkbox left"><input type="checkbox" id="rememberMe">记住密码</label>
-					        	<button type="primary" class="right login-btn"><i class="fa fa-spinner fa-spin login-icon"></i>登陆</button>
+				        	<div class="clearfix">
+					        	<label class="checkbox float-left"><input type="checkbox" id="rememberMe">记住密码</label>
+					        	<button type="primary" class="float-right login-btn btn"><i class="fa fa-spinner fa-spin login-icon"></i>登陆</button>
 				        	</div>
 				        </section>
 				    </fieldset>
 				</div>
 			</div>
-		</column>
-	</row>
-	<script type="text/javascript" src="<?php echo $this->pathUrl('module.admin@assets/js/jquery-2.1.4.min.js'); ?>"></script>
+		</div>
+	</div>
+	<script type="text/javascript" src="<?php echo $this->assets('module.admin@assets/js/jquery-2.1.4.min.js'); ?>"></script>
 	<script type="text/javascript">
 		$(function(){
 			$('.login-btn').click(function(){
