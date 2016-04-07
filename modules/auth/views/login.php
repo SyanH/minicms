@@ -28,32 +28,48 @@
 		.login-error{
 			display: none;
 		}
-        
+        .tabs{
+            margin-bottom:20px;
+        }
+        .tabs p.login-tab{
+            background: #ddf0ed;
+            padding:10px 0;
+        }
+        .tabs p.reg-tab{
+            background: #376956;
+            padding:10px 0;
+        }
+        .tabs p.reg-tab a{
+            color:#fff;
+            text-decoration: none;
+            display:block;
+        }
 	</style>
 </head>
 <body>
 	<div class="grid">
 		<div class="row row-center">
 			<div class="login-wrap col-4">
-				<div class="forms">
-				    <fieldset>
-				        <legend><h4>登陆后台</h4></legend>
-				        <div class="alert alert-error login-error">登录失败！，请输入正确的账号和密码</div>
-				        <section>
-				            <label>账号 <span class="error name-error">账号不能为空</span></label>
-				            <input type="text" id="name" class="width-12"/>
-				        </section><br />
-				        <section>
-				            <label>密码 <span class="error pass-error">密码不能为空</span></label>
-				            <input type="password" id="password" class="width-12" />
-				        </section><br />
-				        <section>
-				        	<div class="clearfix">
-					        	<label class="checkbox float-left"><input type="checkbox" id="rememberMe">记住密码</label>
-					        	<button type="primary" class="float-right login-btn btn"><i class="fa fa-spinner fa-spin login-icon"></i>登陆</button>
-				        	</div>
-				        </section>
-				    </fieldset>
+				<div class="forms gutterless">
+                    <div class="row tabs">
+                        <div class="col-6 text-center"><p class="login-tab">登录</p></div>
+                        <div class="col-6 text-center"><p class="reg-tab"><a href="<?php echo $this->urlFor('reg'); ?>">注册</a></p></div>
+                    </div>
+                    <div class="alert alert-error login-error">登录失败！，请输入正确的账号和密码</div>
+                    <section>
+                        <label>账号 <span class="error name-error">账号不能为空</span></label>
+                        <input type="text" id="name"/>
+                    </section><br />
+                    <section>
+                        <label>密码 <span class="error pass-error">密码不能为空</span></label>
+                        <input type="password" id="password"/>
+                    </section><br />
+                    <section>
+                        <div class="clearfix">
+                            <label class="checkbox float-left"><input type="checkbox" id="rememberMe">记住密码</label>
+                            <button type="primary" class="float-right login-btn btn"><i class="fa fa-spinner fa-spin login-icon"></i>登陆</button>
+                        </div>
+                    </section>
 				</div>
 			</div>
 		</div>

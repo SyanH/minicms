@@ -62,7 +62,7 @@
 				</div>
 				<div class="col text-right">
 					<img class="user-img" src="<?php echo $this->pathUrl('module.admin@assets/images/user.jpg'); ?>">
-					<a href="#"><i class="fa fa-sign-out"></i>退出</a>
+					<a href="<?php echo $this->urlFor('logout'); ?>"><i class="fa fa-sign-out"></i>退出</a>
 				</div>
 			</div>
 		</div>

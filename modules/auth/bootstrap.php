@@ -4,8 +4,8 @@ use vendor\Helper;
 
 $this->module('auth')->extend([
 	'login' => function ($name, $password, $expire = 0) use ($app) {
-		$selectField = filter_var($name, FILTER_VALIDATE_EMAIL) === false ? 'name' : 'email';
-		$app['db']->query(sprintf('SELECT uid,name,email,screenName,userGroup,password FROM @table.users WHERE %s = :name', $selectField));
+		$selectField = filter_var($name, FILTER_VALIDATE_EMAIL) === false ? 'username' : 'email';
+		$app['db']->query(sprintf('SELECT uid,username,email,nickname,role,password FROM @table.user WHERE %s = :name', $selectField));
 		$app['db']->bind(':name', $name);
 		$user = $app['db']->fetch();
 		if (false === $user) {
@@ -22,10 +22,10 @@ $this->module('auth')->extend([
             unset($user['password']);
             $infoHash = Helper::encode($app['key'] . '|' . implode('|', $user), $app['key'], true);
             $app['response']->setCookie('__' . $app['app.name'] . '_' . $infoRandString, $infoHash, $expire);
-            $app['db']->query('UPDATE @table.users SET logged = :logged, authCode = :authCode WHERE uid = :uid');
+            $app['db']->query('UPDATE @table.user SET logintime = :logintime, authcode = :authcode WHERE uid = :uid');
             $app['db']->bindArray([
-            	':logged'   => time(),
-            	':authCode' => $authCode,
+            	':logintime'   => time(),
+            	':authcode' => $authCode,
             	':uid'      => $user['uid']
             ]);
             $app['db']->execute();
@@ -58,10 +58,10 @@ $this->module('auth')->extend([
 			if (null === $cookieUserInfo) {
 				return false;
 			}
-			$app['db']->query('SELECT authCode FROM @table.users WHERE uid = :uid');
+			$app['db']->query('SELECT authcode FROM @table.user WHERE uid = :uid');
 			$app['db']->bind(':uid', intval($cookieUid));
 			$user = $app['db']->fetch();
-			if ($user && Helper::hashValidate($user['authCode'], $code[0])) {
+			if ($user && Helper::hashValidate($user['authcode'], $code[0])) {
                 return true;
             }
             $this->logout();
@@ -86,7 +86,7 @@ $this->module('auth')->extend([
 			}
 			$info = explode('|', Helper::decode(base64_decode($cookieUserInfo), $app['key']));
 			unset($info[0]);
-			$userData = ['uid'=>$info[1], 'name'=>$info[2], 'email'=>$info[3], 'screenName'=>$info[4], 'userGroup'=>$info[5]];
+			$userData = ['uid'=>$info[1], 'username'=>$info[2], 'email'=>$info[3], 'nickname'=>$info[4], 'role'=>$info[5]];
 			if (null !== $key && isset($userData[$key])) {
 				return $userData[$key];
 			}
@@ -95,7 +95,7 @@ $this->module('auth')->extend([
 	},
 	'pass' => function ($resource, $action, $return = false) use ($app) {
 		if ($this->hasLogin()) {
-			$userGroup = $this->getUser('userGroup');
+			$userGroup = $this->getUser('role');
 			if ($app['acl']->hasaccess($userGroup, $resource, $action)) {
 				return true;
 			}
@@ -122,4 +122,5 @@ $this['acl']->addGroup('user');
 
 //路由
 $this->map('GET|POST', '/login', 'modules\\auth\\controllers\\Auth@login', 'login');
+$this->map('GET|POST', '/reg', 'modules\\auth\\controllers\\Auth@reg', 'reg');
 $this->map('GET', '/logout', 'modules\\auth\\controllers\\Auth@logout', 'logout');

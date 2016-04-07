@@ -28,9 +28,9 @@ $configs = [
     'root'        => __DIR__,
     'debug'       => true,
     'debug.log'   => false,
-    'db.prefix' => 'test_',
+    'db.prefix' => 'syan_',
     'db.host'   => '127.0.0.1',
-    'db.dbname' => 'testdb',
+    'db.dbname' => 'minicms',
     'db.user'   => 'root',
     'db.pw'     => ''
 ];
