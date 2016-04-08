@@ -31,4 +31,18 @@ class Auth extends Controller
 		//退出后跳转首页
 		$this->app['response']->redirect($this->app['app.url'], 301);
 	}
+
+	public function reg()
+	{
+		if ($this->app['request']->isAjax()) {
+			$param = $this->app['request']->getArray(['name', 'password', 'email', 'enpassword']);
+
+
+		} else {
+			if ($this->module('auth')->hasLogin()) { //登录过直接跳转首页
+				$this->app['response']->redirect($this->app['app.url'], 301);
+			}
+			echo $this->render('module.auth@views/reg.php');
+		}
+	}
 }

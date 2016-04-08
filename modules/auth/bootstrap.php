@@ -117,7 +117,9 @@ $this->module('auth')->extend([
 	}
 ]);
 
+//添加管理员组
 $this['acl']->addGroup('admin', true);
+//添加用户组
 $this['acl']->addGroup('user');
 
 //路由
