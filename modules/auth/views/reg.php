@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>用户注册</title>
+    <link rel="stylesheet" type="text/css" href="<?php echo $this->assets('module.admin@assets/css/normalize.css'); ?>">
 	<link rel="stylesheet" type="text/css" href="<?php echo $this->assets('module.admin@assets/css/base.css'); ?>">
     <link rel="stylesheet" type="text/css" href="<?php echo $this->assets('module.admin@assets/css/style.css'); ?>">
 	<link rel="stylesheet" type="text/css" href="<?php echo $this->assets('module.admin@assets/css/font-awesome.min.css'); ?>">
@@ -11,7 +12,7 @@
 		}
 		.reg-wrap{
 			padding:20px;
-			margin-top: 170px;
+			margin-top: 20px;
 		}
 		.error{
 			display: none;
@@ -50,6 +51,7 @@
 	<div class="grid">
 		<div class="row row-center">
 			<div class="reg-wrap col-4">
+                <h1 class="text-center"><a href="<?php echo $this['app.url']; ?>"><img src="<?php echo $this->assets('module.admin@assets/images/logo.gif'); ?>" /></a></h1>
 				<div class="forms gutterless">
                     <div class="row tabs">
                         <div class="col-6 text-center"><p class="reg-tab">注册</p></div>

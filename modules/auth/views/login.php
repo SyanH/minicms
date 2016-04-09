@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Login</title>
+    <link rel="stylesheet" type="text/css" href="<?php echo $this->assets('module.admin@assets/css/normalize.css'); ?>">
 	<link rel="stylesheet" type="text/css" href="<?php echo $this->assets('module.admin@assets/css/base.css'); ?>">
     <link rel="stylesheet" type="text/css" href="<?php echo $this->assets('module.admin@assets/css/style.css'); ?>">
 	<link rel="stylesheet" type="text/css" href="<?php echo $this->assets('module.admin@assets/css/font-awesome.min.css'); ?>">
@@ -11,7 +12,7 @@
 		}
 		.login-wrap{
 			padding:20px;
-			margin-top: 170px;
+			margin-top: 20px;
 		}
 		.login-wrap h4{
 			color:#5494af;
@@ -50,6 +51,7 @@
 	<div class="grid">
 		<div class="row row-center">
 			<div class="login-wrap col-4">
+                <h1 class="text-center"><a href="<?php echo $this['app.url']; ?>"><img src="<?php echo $this->assets('module.admin@assets/images/logo.gif'); ?>" /></a></h1>
 				<div class="forms gutterless">
                     <div class="row tabs">
                         <div class="col-6 text-center"><p class="login-tab">登录</p></div>
