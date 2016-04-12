@@ -161,9 +161,11 @@ class Application extends Container
         if ($cb) {
             $this['response']->setHeader('content-type', 'application/javascript; charset=UTF-8');
             echo sprintf('%s(%s)', $cb, json_encode($data));
+            exit;
         } else {
             $this['response']->setHeader('content-type', 'application/json; charset=UTF-8');
             echo json_encode($data);
+            exit;
         }
     }
 

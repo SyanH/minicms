@@ -23,7 +23,7 @@
 			margin-right: 5px;
 			display: none;
 		}
-		.login-error{
+		.reg-error{
 			display: none;
 		}
         .tabs{
@@ -57,7 +57,7 @@
                         <div class="col-6 text-center"><p class="reg-tab">注册</p></div>
                         <div class="col-6 text-center"><p class="login-tab"><a href="<?php echo $this->urlFor('login'); ?>">登录</a></p></div>
                     </div>
-                    <div class="alert alert-error login-error">登录失败！，请输入正确的账号和密码</div>
+                    <div class="alert alert-error reg-error">出错!请联系管理员</div>
                     <section>
                         <label>用户名 <span class="error name-error">账号不能为空</span></label>
                         <input type="text" id="name"/>
@@ -116,13 +116,16 @@
 						$('.reg-icon').show();
 					},
 					success: function(data){
-						$('.reg-icon').hide();
+						$('.reg-icon,.reg-error').hide();
 						if (data.status == 1) {
-							$('.login-error').hide();
 							window.location.href = "<?php echo $this['app.url']; ?>";
+						} else if(data.status == -1) {
+                            $('.reg-error').text(data.msg);
+                            $('.reg-error').show();
 						} else {
-							$('.login-error').show();
-						}
+                            $('.reg-error').text('木有错误');
+                            $('.reg-error').show();
+                        }
 					}
 				});
 			});

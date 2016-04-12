@@ -4,9 +4,9 @@ use vendor\Helper;
 
 $this->module('auth')->extend([
 	'login' => function ($name, $password, $expire = 0) use ($app) {
-		$selectField = filter_var($name, FILTER_VALIDATE_EMAIL) === false ? 'username' : 'email';
-		$app['db']->query(sprintf('SELECT uid,username,email,nickname,role,password FROM @table.user WHERE %s = :name', $selectField));
-		$app['db']->bind(':name', $name);
+		$selectField = filter_var($name, \FILTER_VALIDATE_EMAIL) === false ? 'username' : 'email';
+		$app['db']->query(sprintf('SELECT uid,username,email,nickname,role,password FROM @table.user WHERE %s = :username', $selectField));
+		$app['db']->bind(':username', $name);
 		$user = $app['db']->fetch();
 		if (false === $user) {
 			return false;
