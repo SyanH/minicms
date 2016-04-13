@@ -91,6 +91,7 @@
 					$('.pass-error').show();
 					return;
 				}
+                $('.error').hide();
 				$.ajax({
 					type: "POST",
 					url: "<?php echo $this->urlFor('login'); ?>",

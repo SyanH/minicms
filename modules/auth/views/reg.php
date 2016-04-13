@@ -107,6 +107,7 @@
 					$('.enpass-error').show();
 					return;
 				}
+                $('.error').hide();
 				$.ajax({
 					type: "POST",
 					url: "<?php echo $this->urlFor('reg'); ?>",
@@ -118,14 +119,13 @@
 					success: function(data){
 						$('.reg-icon,.reg-error').hide();
 						if (data.status == 1) {
-							window.location.href = "<?php echo $this['app.url']; ?>";
+							$('#name, #email, #password, #enpassword').val('');
+                            $('.reg-error').attr('class', 'alert alert-success reg-success');
+                            $('.reg-success').html(data.msg).show();
 						} else if(data.status == -1) {
                             $('.reg-error').text(data.msg);
                             $('.reg-error').show();
-						} else {
-                            $('.reg-error').text('木有错误');
-                            $('.reg-error').show();
-                        }
+						}
 					}
 				});
 			});
