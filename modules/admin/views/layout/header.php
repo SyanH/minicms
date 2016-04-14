@@ -18,13 +18,13 @@
 <body>
 	<div class="sidebar">
 		<h1 class="logo">
-			<a href="#"><i class="fa fa-home"></i>后台管理</a>
+			<a href="<?php echo $this->urlFor('admin.index'); ?>"><i class="fa fa-home"></i>后台管理</a>
 		</h1>
 		<nav>
-			<p><a href="#"><i class="fa fa-bars"></i>控制台</a></p>
+			<p><a href="<?php echo $this->urlFor('admin.index'); ?>"><i class="fa fa-bars"></i>控制台</a></p>
 			<div class="show">
-				<a href="#" class="current"><i class="fa fa-angle-double-right"></i>概要</a>
-				<a href="#"><i class="fa fa-angle-double-right"></i>个人设置</a>
+				<a href="<?php echo $this->urlFor('admin.index'); ?>" class="current"><i class="fa fa-angle-double-right"></i>概要</a>
+				<a href="<?php echo $this->urlFor('admin.option'); ?>"><i class="fa fa-angle-double-right"></i>系统设置</a>
 				<a href="#"><i class="fa fa-angle-double-right"></i>插件</a>
 				<a href="#"><i class="fa fa-angle-double-right"></i>主题</a>
 			</div>
