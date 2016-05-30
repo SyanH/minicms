@@ -49,7 +49,7 @@
 								    <button type="primary" onclick="show_message('您有新消息哦！', 'success');return false;" class="btn btn-info">弹出消息</button>
 								    <button type="primary" onclick="show_alert('您有新消息哦！', '.testt', 'error');return false;" class="btn btn-success">弹出消息</button>
 								    <p><a href="#test" rel="modal:open" class="btn btn-error">Open Modal</a></p>
-								    <p><a href="http://www.com/admin/ajaxModal" rel="modal:open" class="btn">Open Modal1</a></p>
+								    <p><a href="http://cms.com/admin/ajaxModal" rel="modal:open" class="btn">Open Modal1</a></p>
 								</div>
 							</div>
 					    </div>

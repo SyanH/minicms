@@ -30,7 +30,7 @@ $configs = [
     'debug.log'   => false,
     'db.prefix' => 'syan_',
     'db.host'   => '127.0.0.1',
-    'db.dbname' => 'minicms',
+    'db.dbname' => 'cms',
     'db.user'   => 'root',
     'db.pw'     => ''
 ];
