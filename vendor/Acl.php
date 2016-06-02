@@ -55,6 +55,15 @@ class Acl
     {
         return $this->resources;
     }
+
+    /**
+     * 获取允许资源
+     * return array
+     */
+    public function getRights()
+    {
+        return $this->rights;
+    }
     
     /**
      * 设置允许资源

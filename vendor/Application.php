@@ -17,7 +17,7 @@ class Application extends Container
     public function __construct(array $values = [])
     {
         ob_start();
-        $this['app.version']        = '0.1';
+        $this['app.version']    = '0.1';
     	$this['debug']          = true;
         $this['debug.log']      = true;
         $this['debug.log.path'] = '';
