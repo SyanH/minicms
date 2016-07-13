@@ -13,7 +13,7 @@ class Auth extends Controller
 			$expire = $param['rememberMe'] == 1 ? 86400 : 0;
 			$return = $this->module('auth')->login($param['name'], $param['password'], $expire);
 			if ($return) {
-				$this->app->json(['status'=>1]);
+				$this->app->json(['status'=>1, 'role'=>$return['role']]);
 			} else {
 				$this->app->json(['status'=>0]);
 			}

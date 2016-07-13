@@ -29,7 +29,7 @@ $this->module('auth')->extend([
             	':uid'      => $user['uid']
             ]);
             $app['db']->execute();
-			return true;
+			return $user;
 		}
 		return false;
 	},

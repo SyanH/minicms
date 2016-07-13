@@ -27,10 +27,10 @@ $configs = [
     'app.name'    => 'syan',
     'root'        => __DIR__,
     'debug'       => true,
-    'debug.log'   => false,
+    'debug.log'   => true,
     'db.prefix' => 'syan_',
     'db.host'   => '127.0.0.1',
-    'db.dbname' => 'cms',
+    'db.dbname' => 'exe',
     'db.user'   => 'root',
     'db.pw'     => ''
 ];

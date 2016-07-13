@@ -1,130 +1,91 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>用户注册</title>
-    <link rel="stylesheet" type="text/css" href="<?php echo $this->assets('module.admin@assets/css/normalize.css'); ?>">
-	<link rel="stylesheet" type="text/css" href="<?php echo $this->assets('module.admin@assets/css/base.css'); ?>">
-    <link rel="stylesheet" type="text/css" href="<?php echo $this->assets('module.admin@assets/css/style.css'); ?>">
-	<link rel="stylesheet" type="text/css" href="<?php echo $this->assets('module.admin@assets/css/font-awesome.min.css'); ?>">
-	<style type="text/css">
-		body{
-			background-color: #fdfdfd;
-		}
-		.reg-wrap{
-			padding:20px;
-			margin-top: 20px;
-		}
-		.error{
-			display: none;
-            color:red;
-            font-size:13px;
-		}
-		.reg-icon{
-			margin-right: 5px;
-			display: none;
-		}
-		.reg-error{
-			display: none;
-		}
-        .tabs{
-            margin-bottom:20px;
-        }
-        .tabs p.reg-tab{
-            background: #ddf0ed;
-            padding:10px 0;
-        }
-        .tabs p.login-tab{
-            background: #376956;
-            padding:10px 0;
-        }
-        .tabs p.login-tab a{
-            color:#fff;
-            text-decoration: none;
-            display:block;
-        }
-        .reg-btn{
-        	width:100%;
-        }
-	</style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>账号注册</title>
+    <link rel="stylesheet" href="<?php echo $this->assets('module.admin@assets/css/normalize.css'); ?>" />
+    <link rel="stylesheet" href="<?php echo $this->assets('module.admin@assets/css/base.css'); ?>" />
+    <link rel="stylesheet" href="<?php echo $this->assets('module.admin@assets/css/style.css'); ?>" />
+    <link rel="stylesheet" href="<?php echo $this->assets('module.admin@assets/css/helper.css'); ?>">
+    <link rel="stylesheet" href="<?php echo $this->assets('module.admin@assets/css/pe-icon-7-stroke.css'); ?>">
 </head>
 <body>
-	<div class="grid">
-		<div class="row row-center">
-			<div class="reg-wrap col-4">
-                <h1 class="text-center"><a href="<?php echo $this['app.url']; ?>"><img src="<?php echo $this->assets('module.admin@assets/images/logo.gif'); ?>" /></a></h1>
-				<div class="forms gutterless">
-                    <div class="row tabs">
-                        <div class="col-6 text-center"><p class="reg-tab">注册</p></div>
-                        <div class="col-6 text-center"><p class="login-tab"><a href="<?php echo $this->urlFor('login'); ?>">登录</a></p></div>
-                    </div>
-                    <div class="alert alert-error reg-error">出错!请联系管理员</div>
-                    <section>
-                        <label>用户名 <span class="error name-error">账号不能为空</span></label>
-                        <input type="text" id="name"/>
-                    </section><br />
-                    <section>
-                        <label>邮箱 <span class="error email-error">邮箱不能为空</span></label>
-                        <input type="email" id="email"/>
-                    </section><br />
-                    <section>
-                        <label>密码 <span class="error pass-error">密码不能为空</span></label>
-                        <input type="password" id="password"/>
-                    </section><br />
-                    <section>
-                        <label>确认密码 <span class="error enpass-error">确认密码不能为空</span></label>
-                        <input type="password" id="enpassword"/>
-                    </section><br />
-                    <section class="row row-center">
-                    	<div class="col-4">
-                        	<button type="primary" class="reg-btn btn"><i class="fa fa-spinner fa-spin reg-icon"></i>确认注册</button>
-                    	</div>
-                    </section>
-				</div>
-			</div>
-		</div>
-	</div>
-	<script type="text/javascript" src="<?php echo $this->assets('module.admin@assets/js/jquery-2.1.4.min.js'); ?>"></script>
-	<script type="text/javascript">
+    <div class="container rel">
+    	<div class="columns">
+    		<div class="column col-5 centered main-content">
+    			<div class="box light-shadow" style="margin-top:100px;">
+    				<div class="box-title">
+						注册
+					</div>
+					<div class="box-content">
+						<div class="form-group">
+                            <input class="form-input" id="name" type="text" placeholder="用户名">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-input" id="email" type="text" placeholder="邮箱">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-input" id="password" type="password" placeholder="密码">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-input" id="enpassword" type="password" placeholder="确认密码">
+                        </div>
+                        <div class="form-group">
+                    		<input type="button" class="btn btn-primary btn-block reg-btn" value="注册">
+                        </div>
+                        <div class="form-group text-center">
+                        	<a href="<?php echo $this->urlFor('login'); ?>">登陆后台</a> | 
+                        	<a href="<?php echo $this['app.url']; ?>">返回首页</a>
+                        </div>
+					</div>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+    <script type="text/javascript" src="<?php echo $this->assets('module.admin@assets/js/jquery-1.11.0.min.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo $this->assets('module.admin@assets/js/jquery.slimscroll.min.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo $this->assets('module.admin@assets/js/main.js'); ?>"></script>
+    <script type="text/javascript">
 		$(function(){
 			$('.reg-btn').click(function(){
+				var el = this;
 				var name = $.trim($('#name').val());
 				var email = $.trim($('#email').val());
 				var password = $.trim($('#password').val());
 				var enpassword = $.trim($('#enpassword').val());
 				if(name == ''){
-					$('.name-error').show();
+					toast('用户名不能为空', 'warning');
 					return;
 				}
 				if(email == ''){
-					$('.email-error').show();
+					toast('邮箱不能为空', 'warning');
 					return;
 				}
 				if(password == ''){
-					$('.pass-error').show();
+					toast('密码不能为空', 'warning');
 					return;
 				}
 				if(enpassword == ''){
-					$('.enpass-error').show();
+					toast('确认密码不能为空', 'warning');
 					return;
 				}
-                $('.error').hide();
 				$.ajax({
 					type: "POST",
 					url: "<?php echo $this->urlFor('reg'); ?>",
 					data: {name:name, password:password, email:email, enpassword:enpassword},
 					dataType: "json",
 					beforeSend: function(){
-						$('.reg-icon').show();
+						$(el).addClass('loading');
 					},
 					success: function(data){
-						$('.reg-icon,.reg-error').hide();
+						$(el).removeClass('loading');
 						if (data.status == 1) {
 							$('#name, #email, #password, #enpassword').val('');
-                            $('.reg-error').attr('class', 'alert alert-success reg-success');
-                            $('.reg-success').html(data.msg).show();
+                            toast(data.msg, 'success');
 						} else if(data.status == -1) {
-                            $('.reg-error').text(data.msg);
-                            $('.reg-error').show();
+                            toast(data.msg, 'error');
 						}
 					}
 				});

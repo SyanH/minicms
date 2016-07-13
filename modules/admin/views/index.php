@@ -1,105 +1,279 @@
 <?php include $this->path('module.admin@views/layout/header.php');  ?>
-<div class="page-head">
-			<h3>系统设置</h3>
-			<div class="state-information">
-                <ol class="breadcrumb clearfix">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Form</a></li>
-                    <li>Form Layout</li>
-                </ol>
+<!-- main content -->
+<div class="main-content">
+	<div class="box light-shadow">
+		<div class="box-title">
+			主要组件
+		</div>
+		<div class="box-content">
+			<ul class="tab">
+                <li class="tab-item active">
+                    <a href="#a">form</a>
+                </li>
+                <li class="tab-item">
+                    <a href="#b">table</a>
+                </li>
+                <li class="tab-item">
+                    <a href="#c">grid</a>
+                </li>
+                <li class="tab-item">
+                    <a href="#d">modal</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+            	<div class="tab-content-item active" id="a">
+            		<form action="">
+            			<div class="form-group">
+                            <label class="form-label" for="input-example-1">标题</label>
+                            <input class="form-input" type="text" id="input-example-1" placeholder="标题">
+                        </div>
+                        <div class="form-group form-group-block">
+                            <label class="form-label">radio block</label>
+                            <label class="form-radio">
+                                <input type="radio" name="gender">
+                                选项1
+                            </label>
+                            <label class="form-radio">
+                                <input type="radio" name="gender">
+                                选项2
+                            </label>
+                            <label class="form-radio">
+                                <input type="radio" name="gender" checked>
+                                选项3
+                            </label>
+                        </div>
+                        <div class="form-group">
+                        	<label class="form-label">radio inline</label>
+                            <label class="form-radio">
+                                <input type="radio" name="gender">
+                                选项1
+                            </label>
+                            <label class="form-radio">
+                                <input type="radio" name="gender">
+                                选项2
+                            </label>
+                            <label class="form-radio">
+                                <input type="radio" name="gender" checked>
+                                选项3
+                            </label>
+                        </div>
+                        <div class="form-group form-group-block">
+                        	<label class="form-label">checkbox block</label>
+                        	<label class="form-checkbox">
+                                <input type="checkbox">
+                             	选项1
+                            </label>
+                            <label class="form-checkbox">
+                                <input type="checkbox" checked>
+                             	选项2
+                            </label>
+                        </div>
+                        <div class="form-group">
+                        	<label class="form-label">checkbox inline</label>
+                        	<label class="form-checkbox">
+                                <input type="checkbox">
+                             	选项1
+                            </label>
+                            <label class="form-checkbox">
+                                <input type="checkbox" checked>
+                             	选项2
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="input-example-3">内容</label>
+                            <textarea class="form-input" id="input-example-3" spellcheck="false" placeholder="Textarea" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">http://</span>
+                                <input type="text" class="form-input" placeholder="site url" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-primary" type="submit">Submit</button>
+                            <button class="btn btn-link" type="reset">Cancel</button>
+                        </div>
+            		</form>
+            	</div>
+            	<div class="tab-content-item" id="b">
+            		<table class="table table-striped table-hover mt-10 checkbox-all-wrap">
+	                    <thead>
+	                        <tr>
+	                            <th><input type="checkbox" class="checkbox-all"></th>
+	                            <th>标题</th>
+	                            <th>时间</th>
+	                            <th>作者</th>
+	                            <th>更新</th>
+	                        </tr>
+	                    </thead>
+	                    <tbody>
+	                        <tr>
+	                            <td><input type="checkbox"></td>
+	                            <td>The Shawshank Redemption</td>
+	                            <td>2h 22min</td>
+	                            <td>Crime, Drama</td>
+	                            <td>14 October 1994 <span class="label">USA</span></td>
+	                        </tr>
+	                        <tr>
+	                            <td><input type="checkbox"></td>
+	                            <td>The Godfather</td>
+	                            <td>2h 55min</td>
+	                            <td>Crime, Drama</td>
+	                            <td>24 March 1972 <span class="label">USA</span></td>
+	                        </tr>
+	                        <tr>
+	                            <td><input type="checkbox"></td>
+	                            <td>Schindler's List</td>
+	                            <td>3h 15min</td>
+	                            <td>Biography, Drama, History</td>
+	                            <td>4 February 1994 <span class="label">USA</span></td>
+	                        </tr>
+	                        <tr>
+	                            <td><input type="checkbox"></td>
+	                            <td>Se7en</td>
+	                            <td>2h 7min</td>
+	                            <td>Crime, Drama, Mystery</td>
+	                            <td>24 March 1972 <span class="label label-primary">USA</span></td>
+	                        </tr>
+	                    </tbody>
+	                </table>
+	                <ul class="pagination text-center">
+					    <li class="page-item">
+					        <a href="#" class="disabled">
+					            Previous
+					        </a>
+					    </li>
+					    <li class="page-item active">
+					        <a href="#">
+					            1
+					        </a>
+					    </li>
+					    <li class="page-item">
+					        <a href="#">
+					            2
+					        </a>
+					    </li>
+					    <li class="page-item">
+					        <a href="#">
+					            3
+					        </a>
+					    </li>
+					    <li class="page-item">
+					        <span>...</span>
+					    </li>
+					    <li class="page-item">
+					        <a href="#">
+					            12
+					        </a>
+					    </li>
+					    <li class="page-item">
+					        <a href="#">
+					            Next
+					        </a>
+					    </li>
+					</ul>
+            	</div>
+            	<div class="tab-content-item" id="c">
+            		<div class="container">
+					    <div class="columns">
+					        <div class="column col-6">
+					        	<div style="background-color: #dfdfdf;padding:20px;text-align: center;">col-6</div>
+					        </div>
+					        <div class="column col-3">
+					        	<div style="background-color: #dfdfdf;padding:20px;text-align: center;">col-3</div>
+					        </div>
+					        <div class="column col-3">
+					        	<div style="background-color: #dfdfdf;padding:20px;text-align: center;">col-3</div>
+					        </div>
+					    </div>
+
+					    <div class="columns">
+					        <div class="column col-6">
+					        	<div style="background-color: #dfdfdf;padding:20px;text-align: center;">col-6</div>
+					        </div>
+					        <div class="column col-6">
+					        	<div style="background-color: #dfdfdf;padding:20px;text-align: center;">col-6</div>
+					        </div>
+					    </div>
+					</div>
+            	</div>
+            	<div class="tab-content-item" id="d">
+            		<a modal-href="#test-modal" modal class="btn btn-primary">modal</a>
+            		<a modal-href="<?php echo $this->urlFor('admin.modal'); ?>" modal class="btn btn-primary">modal ajax</a>
+            	</div>
             </div>
 		</div>
-		<div class="main-content">
-			<section class="panel">
-                <header class="panel-head">
-                    后台设置
-                </header>
-                <ul class="panel-tab clearfix">
-                	<li><a class="active">选项1</a></li>
-                	<li><a>选项2</a></li>
-                	<li><a>选项3</a></li>
-                </ul>
-                <div class="panel-content">
-                	<form method="post" action="test.php" autocomplete='off'>
-                		<div class="tabbed testt grid">
-							<div class="row row-center">
-								<div class="col-8">
-									<section>
-								        <label>标题</label>
-								        <input type="text" name="title" class="width-6" />
-								    </section>
-								    <fieldset>
-								    	<legend>选择项</legend>
-									    <section class="checkbox-list">
-									        <label><input type="checkbox"> 马云</label>
-									        <label><input type="checkbox"> 李彦宏</label>
-									        <label><input type="checkbox"> 刘强东</label>
-									        <label><input type="checkbox"> 不知道谁</label>
-									    </section>
-								    </fieldset>
-                                    <section>
-                                        <label>测试下拉</label>
-                                        <select name="cars">
-                                            <option value="volvo">Volvo</option>
-                                            <option value="saab">Saab</option>
-                                            <option value="fiat" selected="selected">Fiat</option>
-                                            <option value="audi">Audi</option>
-                                        </select>
-                                    </section>
-								    <button type="primary" onclick="show_message('您有新消息哦！', 'success');return false;" class="btn btn-info">弹出消息</button>
-								    <button type="primary" onclick="show_alert('您有新消息哦！', '.testt', 'error');return false;" class="btn btn-success">弹出消息</button>
-								    <p><a href="#test" rel="modal:open" class="btn btn-error">Open Modal</a></p>
-								    <p><a href="http://cms.com/admin/ajaxModal" rel="modal:open" class="btn">Open Modal1</a></p>
-								</div>
-							</div>
-					    </div>
-					    <div class="tabbed">
-					    	<table class="am-table am-table-striped am-table-hover am-table-compact">
-								<thead>
-									<tr>
-										<th><input type="checkbox" class="table-all"></th>
-										<th>First Name</th>
-										<th>Last Name</th>
-										<th>Points</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td><input type="checkbox" name="test[]" /></td>
-										<td>Jill</td>
-										<td>Smith</td>
-										<td>50</td>
-									</tr>
-									<tr>
-										<td><input type="checkbox" name="test[]" /></td>
-										<td>Eve</td>
-										<td>Jackson</td>
-										<td>94</td>
-									</tr>
-								</tbody>
-							</table>
-							<button onClick="progressBar.start();return false;" class="btn">start</button>
-							<button onClick="progressBar.stop();return false;" class="btn">stop</button>
-							<button class="btn">Button</button>
-					    </div>
-					    <div class="tabbed">
-					    	<div class="alert alert-primary"><p class="alert-close"><i class="fa fa-times"></i></p>Bender! <br />Ship! <br />Stop bickering or I'm going to <a href="#">come back</a> there and change your opinions manually!</div>
-					    	<div class="alert alert-error"><p class="alert-close"><i class="fa fa-times"></i></p>Bender! Ship! Stop bickering or I'm going to <a href="#">come back</a> there and change your opinions manually!</div>
-					    	<div class="alert alert-warning"><p class="alert-close"><i class="fa fa-times"></i></p>Bender! Ship! Stop bickering or I'm going to <a href="#">come back</a> there and change your opinions manually!</div>
-					    	<div class="alert alert-success"><p class="alert-close"><i class="fa fa-times"></i></p>Bender! Ship! Stop bickering or I'm going to <a href="#">come back</a> there and change your opinions manually!</div>
-					    	<blockquote>作为一个手无缚鸡之力、毫无家庭背景、<samp>远离家乡</samp>、上有老下有小的苦逼程序员，我只能举着患有腱鞘炎的一双手，在 HHKB Pro 键盘上敲打；<mark>僵着颈椎强直的脖子</mark>，在 4K 显示器前 review 代码；竖着椎间盘突出的腰，在人体工学座椅上坚持 18hx7d ；忍着挨饿的胃，分析饿了么和美团的商品推荐算法。 </blockquote>
-							<button class="btn">Button</button>
-							<button class="btn">Button</button>
-							<button class="btn">Button</button>
-						</div>
-					</form>
-                </div>
-            </section>
-		</div>
-		<div class="hidden" id="test">
-			<div class="modal-title">这是标题</div>
-			<div class="modal-content">
-				<blockquote>作为一个手无缚鸡之力、毫无家庭背景、<samp>远离家乡</samp>、上有老下有小的苦逼程序员，我只能举着患有腱鞘炎的一双手，在 HHKB Pro 键盘上敲打；<mark>僵着颈椎强直的脖子</mark>，在 4K 显示器前 review 代码；竖着椎间盘突出的腰，在人体工学座椅上坚持 18hx7d ；忍着挨饿的胃，分析饿了么和美团的商品推荐算法。 </blockquote>
+	</div>
+	<div class="columns">
+		<div class="column col-6">
+			<div class="box light-shadow mt-10">
+				<div class="box-title">
+					按钮组
+				</div>
+				<div class="box-content">
+					<div class="btn-group btn-group-block">
+	                    <button class="btn active">按钮1</button>
+	                    <button class="btn">按钮2</button>
+	                    <button class="btn">按钮3</button>
+	                </div>
+	                <div class="mt-10">
+	                	<button class="btn btn-primary">单个按钮</button>
+	                	<button class="btn btn-primary active">单个按钮</button>
+	                	<button class="btn loading">加载</button>
+	                </div>
+	                <div class="mt-10">
+	                	<button class="btn btn-block" onclick="toast('测试消息提示!', 'error');">toast</button>
+	                </div>
+				</div>
+			</div>
+			<div class="box light-shadow mt-20">
+				<div class="box-title">
+					头像
+				</div>
+				<div class="box-content">
+					<div class="mt-10">
+	                    <figure class="avatar avatar-xl">
+	                        <img src="<?php echo $this->assets('module.admin@assets/images/avatar-1.png'); ?>" />
+	                    </figure>
+	                    <figure class="avatar avatar-xl">
+	                        <img src="<?php echo $this->assets('module.admin@assets/images/avatar-1.png'); ?>" />
+	                        <img src="<?php echo $this->assets('module.admin@assets/images/avatar-1.png'); ?>" class="avatar-icon" />
+	                    </figure>
+	                    <figure class="avatar avatar-xl" data-initial="Syan" style="background-color: #39dd92;"></figure>
+	                </div>
+				</div>
 			</div>
 		</div>
+		<div class="column col-6">
+			<div class="box light-shadow mt-10">
+				<div class="box-title">
+					消息提示
+				</div>
+				<div class="box-content">
+					<div class="toast mt-10">
+	                    <button class="btn btn-clear float-right"></button>
+	                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+	                </div>
+
+	                <div class="toast toast-error mt-10">
+	                    <button class="btn btn-clear float-right"></button>
+	                    <span class="icon icon-error_outline"></span>
+	                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+	                </div>
+	                <div class="toast toast-success mt-10">
+	                    <button class="btn btn-clear float-right"></button>
+	                    <span class="icon icon-error_outline"></span>
+	                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+	                </div>
+	                <div class="toast toast-warning mt-10">
+	                    <button class="btn btn-clear float-right"></button>
+	                    <span class="icon icon-error_outline"></span>
+	                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+	                </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- main-content end -->
 <?php include $this->path('module.admin@views/layout/footer.php');  ?>
